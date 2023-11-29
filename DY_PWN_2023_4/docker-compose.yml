@@ -1,0 +1,47 @@
+version: '3'
+
+services:
+        rop_x86:
+                container_name: rop_x86
+                build:
+                        context: rop_x86
+                        args:
+                                IMAGE: ubuntu:18.04
+                                USER: rop_x86
+                                TIMEOUT: 60
+                                EXEC: rop_x86
+                                SERVICE: rop_x86
+                                APT_OLD: 0
+                ports:
+                        - "10015:8080"
+                restart: always
+
+        out_of_bound:
+                container_name: out_of_bound
+                build:
+                        context: out_of_bound
+                        args:
+                                IMAGE: ubuntu:18.04
+                                USER: oob
+                                TIMEOUT: 60
+                                EXEC: oob
+                                SERVICE: oob
+                                APT_OLD: 0
+                ports:
+                        - "10016:8080"
+                restart: always
+
+        out_of_bound_2:
+                container_name: out_of_bound_2
+                build:
+                        context: out_of_bound_2
+                        args:
+                                IMAGE: ubuntu:18.04
+                                USER: oob_2
+                                TIMEOUT: 60
+                                EXEC: oob_2
+                                SERVICE: oob_2
+                                APT_OLD: 0
+                ports:
+                        - "10017:8080"
+                restart: always

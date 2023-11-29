@@ -1,0 +1,47 @@
+version: '3'
+
+services:
+        rop_x64:
+                container_name: rop_x64
+                build:
+                        context: rop_x64
+                        args:
+                                IMAGE: ubuntu:20.04
+                                USER: rop_x64
+                                TIMEOUT: 60
+                                EXEC: rop_x64
+                                SERVICE: rop_x64
+                                APT_OLD: 0
+                ports:
+                        - "10018:8080"
+                restart: always
+
+        fsb_training:
+                container_name: fsb_training
+                build:
+                        context: fsb_training
+                        args:
+                                IMAGE: ubuntu:20.04
+                                USER: fsb_training
+                                TIMEOUT: 60
+                                EXEC: fsb_training
+                                SERVICE: fsb_training
+                                APT_OLD: 0
+                ports:
+                        - "10019:8080"
+                restart: always
+
+        rwx_allocation:
+                container_name: rwx_allocation
+                build:
+                        context: rwx_allocation
+                        args:
+                                IMAGE: ubuntu:20.04
+                                USER: rwx_allocation
+                                TIMEOUT: 60
+                                EXEC: rwx_allocation
+                                SERVICE: rwx_allocation
+                                APT_OLD: 0
+                ports:
+                        - "10020:8080"
+                restart: always

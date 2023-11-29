@@ -1,0 +1,47 @@
+version: '3'
+
+services:
+        prob5:
+                container_name: prob5
+                build:
+                        context: prob5
+                        args:
+                                IMAGE: ubuntu:16.04
+                                USER: prob5
+                                TIMEOUT: 60
+                                EXEC: prob5
+                                SERVICE: prob5
+                                APT_OLD: 0
+                ports:
+                        - "10009:8080"
+                restart: always
+
+        prob6:
+                container_name: prob6
+                build:
+                        context: prob6
+                        args:
+                                IMAGE: ubuntu:16.04
+                                USER: prob6
+                                TIMEOUT: 60
+                                EXEC: prob6
+                                SERVICE: prob6
+                                APT_OLD: 0
+                ports:
+                        - "10010:8080"
+                restart: always
+
+        prob7:
+                container_name: prob7
+                build:
+                        context: prob7
+                        args:
+                                IMAGE: ubuntu:16.04
+                                USER: prob7
+                                TIMEOUT: 60
+                                EXEC: prob7
+                                SERVICE: prob7
+                                APT_OLD: 0
+                ports:
+                        - "10011:8080"
+                restart: always

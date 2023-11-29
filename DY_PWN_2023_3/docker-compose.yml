@@ -1,0 +1,47 @@
+version: '3'
+
+services:
+        rtl64:
+                container_name: rtl64
+                build:
+                        context: rtl64
+                        args:
+                                IMAGE: ubuntu:18.04
+                                USER: rtl64
+                                TIMEOUT: 60
+                                EXEC: rtl64
+                                SERVICE: rtl64
+                                APT_OLD: 0
+                ports:
+                        - "10012:8080"
+                restart: always
+
+        puts_flag:
+                container_name: puts_flag
+                build:
+                        context: puts_flag
+                        args:
+                                IMAGE: ubuntu:22.04
+                                USER: puts_flag
+                                TIMEOUT: 60
+                                EXEC: puts_flag
+                                SERVICE: puts_flag
+                                APT_OLD: 0
+                ports:
+                        - "10013:8080"
+                restart: always
+
+        nobinsh:
+                container_name: nobinSh
+                build:
+                        context: nobinSh
+                        args:
+                                IMAGE: ubuntu:16.04
+                                USER: nobinSh
+                                TIMEOUT: 60
+                                EXEC: nobinSh
+                                SERVICE: nobinSh
+                                APT_OLD: 0
+                ports:
+                        - "10014:8080"
+                restart: always

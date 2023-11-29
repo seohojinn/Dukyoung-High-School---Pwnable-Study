@@ -1,0 +1,34 @@
+version: '3'
+
+services:
+        fsb_training_2:
+                container_name: fsb_training_2
+                build:
+                        context: fsb_training_2
+                        args:
+                                IMAGE: ubuntu:22.04
+                                USER: fsb_training_2
+                                TIMEOUT: 60
+                                EXEC: fsb_training_2
+                                SERVICE: fsb_training_2
+                                APT_OLD: 0
+                ports:
+                        - "10023:8080"
+                restart: always
+
+        fsb_training_3:
+                container_name: fsb_training_3
+                build:
+                        context: fsb_training_3
+                        args:
+                                IMAGE: ubuntu:22.04
+                                USER: fsb_training_3
+                                TIMEOUT: 60
+                                EXEC: fsb_training_3
+                                SERVICE: fsb_training_3
+                                APT_OLD: 0
+                ports:
+                        - "10024:8080"
+                restart: always
+
+        

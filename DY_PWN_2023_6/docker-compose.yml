@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+        canary:
+                container_name: canary
+                build:
+                        context: canary
+                        args:
+                                IMAGE: ubuntu:22.04
+                                USER: canary
+                                TIMEOUT: 60
+                                EXEC: canary
+                                SERVICE: canary
+                                APT_OLD: 0
+                ports:
+                        - "10021:8080"
+                restart: always
+
+        pie:
+                container_name: pie
+                build:
+                        context: pie
+                        args:
+                                IMAGE: ubuntu:22.04
+                                USER: pie
+                                TIMEOUT: 60
+                                EXEC: pie
+                                SERVICE: pie
+                                APT_OLD: 0
+                ports:
+                        - "10022:8080"
+                restart: always
+

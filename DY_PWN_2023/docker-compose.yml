@@ -1,0 +1,92 @@
+version: '3'
+
+services:
+        mic_check:
+                container_name: mic_check
+                build:
+                        context: mic_check
+                        args:
+                                IMAGE: ubuntu:16.04
+                                USER: mic_check
+                                TIMEOUT: 60
+                                EXEC: mic_check
+                                SERVICE: mic_check
+                                APT_OLD: 0
+                ports:
+                        - "10001:8080"
+                restart: always
+
+
+        return_address_overwrite:
+                container_name: return_address_overwrite
+                build:
+                        context: return_address_overwrite
+                        args:
+                                IMAGE: ubuntu:16.04
+                                USER: return_address_overwrite
+                                TIMEOUT: 60
+                                EXEC: return_address_overwrite
+                                SERVICE: return_address_overwrite
+                                APT_OLD: 0
+                ports:
+                        - "10004:8080"
+                restart: always
+
+        return_to_shellcode:
+                container_name: return_to_shellcode
+                build:
+                        context: return_to_shellcode
+                        args:
+                                IMAGE: ubuntu:16.04
+                                USER: return_to_shellcode
+                                TIMEOUT: 60
+                                EXEC: return_to_shellcode
+                                SERVICE: return_to_shellcode
+                                APT_OLD: 0
+                ports:
+                        - "10005:8080"
+                restart: always
+
+        return_address_overwrite_64bit:
+                container_name: return_address_overwrite_64bit
+                build:
+                        context: return_address_overwrite_64bit
+                        args:
+                                IMAGE: ubuntu:16.04
+                                USER: return_address_overwrite_64bit
+                                TIMEOUT: 60
+                                EXEC: return_address_overwrite_64bit
+                                SERVICE: return_address_overwrite_64bit
+                                APT_OLD: 0
+                ports:
+                        - "10006:8080"
+                restart: always
+        prob2:
+                container_name: prob2
+                build:
+                        context: prob2
+                        args:
+                                IMAGE: ubuntu:16.04
+                                USER: prob2
+                                TIMEOUT: 60
+                                EXEC: prob2
+                                SERVICE: prob2
+                                APT_OLD: 0
+                ports:
+                        - "10007:8080"
+                restart: always
+        prob3:
+                container_name: prob3
+                build:
+                        context: prob3
+                        args:
+                                IMAGE: ubuntu:16.04
+                                USER: prob3
+                                TIMEOUT: 60
+                                EXEC: prob3
+                                SERVICE: prob3
+                                APT_OLD: 0
+                ports:
+                        - "10008:8080"
+                restart: always
+
